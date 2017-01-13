@@ -1,8 +1,9 @@
 <% include partials/header.ejs %>
-  <div>
-    <form action="/text" method="post">
+  <h2>Enter text to be analyzed:</h2>
+  <form action="/text" method="post">
+    <div>
       <textarea class="intext" name="intext"></textarea>
-      <input type="submit">
-    </form>
-  </div>
+    </div>
+    <input type="submit">
+  </form>
   <% include partials/footer.ejs %>

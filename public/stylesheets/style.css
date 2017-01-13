@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding: 20px 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #EEE;
 }
@@ -11,4 +11,16 @@ a {
 .intext {
   width: 500px;
   height: 300px;
+  margin-bottom: 16px;
+}
+
+.textin {
+  display: none;
+}
+
+.summary {
+  background-color: white;
+  border: 1px solid #666;
+  padding: 8px;
+  margin-top: 8px;
 }

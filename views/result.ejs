@@ -1,24 +1,57 @@
-<div>
-  Text In:
-</div>
-<div class="textin">
-  <%= intext %>
-</div>
-<ul>
-  <li>
-    <strong>Word Count:</strong>
-    <%= wordCount %>
-  </li>
-  <li>
-    <strong>Chaacter Count:</strong>
-    <%= charCount %>
-  </li>
-  <li>
-    <strong>without spaces:</strong>
-    <%= charCountSpaces %>
-  </li>
-  <li>
-    <strong>without punctuation:</strong>
-    <%= charCountPunctuation %>
-  </li>
-</ul>
+<% include partials/header.ejs %>
+
+  <div>
+    <h2>Statistics:</h2>
+    <ul>
+      <li>
+        <strong>Word Count:</strong>
+        <%= wordCount %>
+      </li>
+      <li>
+        <strong>Chaacter Count:</strong>
+        <%= charCount %>
+      </li>
+      <li>
+        <strong>without spaces:</strong>
+        <%= charCountSpaces %>
+      </li>
+      <li>
+        <strong>without punctuation:</strong>
+        <%= charCountPunctuation %>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Top five words:</h2>
+    <ul>
+      <% for (var i=0; i<mostFreq.length; i++) { %>
+        <li>
+          <%=mostFreq[i].word%> (
+            <%= mostFreq[i].count %> )
+        </li>
+        <% }%>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Five rarest words:</h2>
+    <ul>
+      <% for (var i=0; i<leastFreq.length; i++) { %>
+        <li>
+          <%=leastFreq[i].word%> (
+            <%= leastFreq[i].count %> )
+        </li>
+        <% }%>
+    </ul>
+  </div>
+
+  <div>
+    <strong>Summary:</strong>
+  </div>
+
+  <div class="summary">
+    <%= summary %>
+  </div>
+
+  <% include partials/footer.ejs %>

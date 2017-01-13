@@ -21,7 +21,9 @@ router.post('/text', (req, res) => {
   const charCountPunctuation = lex.charCount(intext, {
     noPunctuation: true
   });
-  const wordFreq = lex.wordFreq(intext);
+  const mostFreq = lex.mostFreq(intext);
+  const leastFreq = lex.leastFreq(intext);
+  const summary = lex.summarize(intext);
 
   res.render('result', {
     intext,
@@ -29,7 +31,9 @@ router.post('/text', (req, res) => {
     charCountSpaces,
     charCountPunctuation,
     wordCount,
-    wordFreq
+    mostFreq,
+    leastFreq,
+    summary
   });
 });
 
