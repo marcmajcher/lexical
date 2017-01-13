@@ -21,13 +21,15 @@ router.post('/text', (req, res) => {
   const charCountPunctuation = lex.charCount(intext, {
     noPunctuation: true
   });
+  const wordFreq = lex.wordFreq(intext);
 
   res.render('result', {
     intext,
     charCount,
     charCountSpaces,
     charCountPunctuation,
-    wordCount
+    wordCount,
+    wordFreq
   });
 });
 
